@@ -1,6 +1,7 @@
 # **TOSD: Website project**
 ## About
 **THIS IS A WIP**
+
 My goal is to make a website that can onlt be accessed via a direct link in the form of a QR code.
 This website will house information about me and my fiancée's wedding. 
 
