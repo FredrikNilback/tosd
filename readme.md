@@ -9,7 +9,17 @@ To protect our privacy, and our database, I have taken measures in order to only
 I consider private, such as the date and location of the wedding, our contact information, and the ability to RSVP.
 
 You need application setting, secrets, and secret images in order to properly run this code. These are not available on github, but must be acquired from the owner (me).
-If you wish to set this site up locally yourself you will need to add your own database and your own setting, secrets and images.
+If you wish to set this site up locally yourself you will need to add your own database and your own setting, secrets and images. You will also need to set up the proper dependancies.
 
 ## How to run
 mvn spring-boot:run
+
+## Technologies and Languages
+- Java (Backend)
+- Maven
+- Springboot
+- .json
+- MySQL (Database)
+- JavaScript (Frontend)
+- HTML
+- CSS
