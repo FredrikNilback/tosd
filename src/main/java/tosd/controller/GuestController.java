@@ -29,9 +29,9 @@ public class GuestController {
     }
 
 
-    @CrossOrigin(origins = "http://127.0.0.1:5500")
-    @PostMapping("accept")
-    public Guest acceptInvite(@RequestBody AcceptInviteRequest req) {
-        return guestService.acceptInvite(req);
-    }
+    //@CrossOrigin(origins = "http://127.0.0.1:5500")
+    //@PostMapping("accept")
+    //public Guest acceptInvite(@RequestBody AcceptInviteRequest req) {
+    //    return guestService.acceptInvite(req);
+    //}
 }

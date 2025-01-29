@@ -3,9 +3,6 @@ package tosd.controller;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.UrlResource;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +12,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Base64;
+import java.util.List;
 
 import tosd.dto.GetImageRequest;
 import tosd.dto.ValidateGuestRequest;
@@ -57,7 +57,6 @@ public class SecretsController {
     @CrossOrigin(origins = "http://127.0.0.1:5500")
     @PostMapping("getImage")
     public ResponseEntity<?> getSecretImage(@RequestBody GetImageRequest req) {
-        
         try {
             String backendPassword = getPasswordFromJson();
             if (!backendPassword.equals(req.getPassword())) {
@@ -67,16 +66,24 @@ public class SecretsController {
             e.printStackTrace();
             return new ResponseEntity<>("Error fetching secrets", HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        try {
-            Path imagePath = Paths.get("src/main/resources/images/secretImage2.png");
-            Resource imageResource = new UrlResource(imagePath.toUri());
-            if (!imageResource.exists()) {
-                return ResponseEntity.notFound().build();
-            }
-            HttpHeaders headers = new HttpHeaders();
-            headers.add(HttpHeaders.CONTENT_TYPE, "image/png");
 
-            return ResponseEntity.ok().headers(headers).body(imageResource);
+        try {
+            List<String> imagePaths = List.of(
+                "src/main/resources/images/secretLocation1.png",
+                "src/main/resources/images/secretLocation2.png",
+                "src/main/resources/images/secretLogo.png"
+            );
+            List<String> base64Images = new ArrayList<>();
+            for (String imagePath : imagePaths) {
+                Path path = Paths.get(imagePath);
+                if (Files.exists(path)) {
+                    byte[] imageBytes = Files.readAllBytes(path);
+                    String base64Image = Base64.getEncoder().encodeToString(imageBytes);
+                    base64Images.add(base64Image);
+                }
+            }
+            return ResponseEntity.ok(base64Images);
+
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.status(500).build();

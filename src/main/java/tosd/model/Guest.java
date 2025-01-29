@@ -17,29 +17,29 @@ public class Guest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "name", nullable = false)
-    private String name;
+
+    @Column(name = "names", nullable = false)
+    private String names;
+
     @Column(name = "email")
     private String email = null;
-    @Column(name = "named_guests", nullable = false)
-    private Integer namedGuests = 1;
+
     @Column(name = "plus_one", nullable = false)
     private Boolean plusOne = false;
-    @Column(name = "rsvp_count", nullable = false)
-    private int rsvpCount = 0;
+
     @JsonIgnore
     @Column(name = "hashed_password", nullable = false)
     private String hashedPassword;
+
     @JsonIgnore
     @Column(name = "salt", nullable = false)
     private String salt;
-
+    
     public Guest() {}
-    public Guest(String name, Integer namedGuests, String email, Boolean plusOne, String token) {
-        this.name = name;
-        this.namedGuests = (namedGuests != null) ? namedGuests : 1;
+    public Guest(String names, String email, Boolean plusOne, String token) {
+        this.names = names;
         this.email = email;
-        this.plusOne = (plusOne != null) ? plusOne : false;
+        this.plusOne = plusOne;
         this.salt = generateRandomString();
         this.hashedPassword = hash(token + salt);
     }
@@ -77,15 +77,10 @@ public class Guest {
 
     // Getters & Setters
     public int getId() { return id; }
-    public int getNamedGuests() { return namedGuests; }
-    public int getRsvpCount() { return rsvpCount; }
-    public void setRsvpCount(int rsvpCount) { this.rsvpCount = rsvpCount; }
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public String getNames() { return names;}
+    public void setNames(String names) { this.names = names;}
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
     public Boolean getPlusOne() { return plusOne; }
     public void setPlusOne(Boolean plusOne) { this.plusOne = plusOne; }
-    public String getSalt() { return salt; }
 }
-

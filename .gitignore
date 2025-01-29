@@ -1,7 +1,8 @@
 application.properties
 websecrets.json
 secrets.json
-src/main/resources/images/
+src/main/resources/images/*
 pom.xml
 .vscode/
 /target/
+.env

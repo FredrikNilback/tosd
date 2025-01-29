@@ -19,29 +19,13 @@ public class GuestService {
     private GuestRepository guestRepository;
 
     public Guest addGuest(AddGuestRequest req) {
-        Guest guest = new Guest(req.getName(), req.getNamedGuests(), req.getEmail(), req.getPlusOne(), req.getToken());
+        Guest guest = new Guest(req.getNames(), req.getEmail(), req.getPlusOne(), req.getToken());
         return guestRepository.save(guest);
     }
 
-    public Guest acceptInvite(AcceptInviteRequest req) {
-        int id = req.getId();
-        String token = req.getToken();
-        int rsvpCount = req.getRsvpCount();
-
-        
-        Optional<Guest> guestOptional = guestRepository.findById(id);
-        if (guestOptional.isPresent()) {
-            Guest guest = guestOptional.get();
-            if (validate(guest, token)) {
-                guest.setRsvpCount(rsvpCount);
-                return guestRepository.save(guest);
-            } else {
-                throw new RuntimeException("Token does not match");
-            }
-        } else {
-            throw new RuntimeException("Guest not found with id: " + id);
-        }
-    }
+    //public Guest acceptInvite(AcceptInviteRequest req) {
+  //
+    //}
 
     public Guest validate(ValidateGuestRequest req) {
         Optional<Guest> guestOptional = guestRepository.findById(req.getId());
@@ -59,13 +43,5 @@ public class GuestService {
 
     public List<Guest> getGuests() {
         return guestRepository.findAll();
-    }
-
-    public List<Guest> getAttendees() {
-        return guestRepository.getAttendees();
-    }
-
-    private boolean validate(Guest guest, String token) {
-        return guest.validate(token);
     }
 }
