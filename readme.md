@@ -14,7 +14,7 @@ If you wish to set this site up locally yourself you will need to add your own d
 ## How to run
 mvn spring-boot:run
 
-## Technologies and Languages
+## Technologies, Frameworks and Languages
 - Java (Backend)
 - Maven
 - Springboot
@@ -23,3 +23,4 @@ mvn spring-boot:run
 - JavaScript (Frontend)
 - HTML
 - CSS
+- AWS

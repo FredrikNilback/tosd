@@ -1,131 +1,132 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('../fonts/bohemeFloral.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
+html, body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+html {
+    height: 90%;
+}
+body {
+    max-height: 100%;
+}
+main {
+    flex: 1;
+    padding-bottom: 20vh;
+}
 header {
     background-size: cover; 
-    background-position: 50px -50px; 
+    background-position: 50px -50px;
+    background-color: antiquewhite;
     color: white;
-    padding-bottom: 80px;
+    padding-bottom: 12.5vh;
     text-align: center;
     position: relative;
-}
-header h1 {
-    margin: 0;
-    z-index: 1;
 }
 
 nav {
     position: absolute;
-    top: 2.5vh;
+    top: 7vh;
     right: 1vw;
     display: flex;
 }
-
 nav a {
-    padding: 2vh 2vw;
+    padding: 1.5vh 1.5vw;
     text-decoration: none;
     color: rgb(20, 20, 20);
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
     font-weight: bold;
     text-align: center;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
+    transition: color 0.3s ease;
 }
 nav a:hover {
-    color: #4CAF50;
-    background-color: #575757;
+    color: #ffffff;
+    background-color: #5757574e;
 }
-
 nav a.active {
     color: #ffffff;
     font-weight: bold;
-    background-color: #4CAF50;
+    border-left: 3px solid rgb(20, 20, 20);
+    border-right: 3px solid rgb(20, 20, 20);
+    background-color: #5757578c;
 }
-
-nav a:last-child {
-    border-right: none;
-}
-
-main {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
 .tab-content {
     display: none;
     animation: fadeIn 0.5s ease-in-out;
 }
-
 .tab-content.active {
     display: block;
 }
 
-footer {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
+.tab-header {
+    font-family: 'MyCustomFont', sans-serif;
+    font-size: clamp(1.6rem, 3vw, 2rem);
 }
 
 /* header specific elements */
 #logo-image {
     position: absolute;
-    top:15px;
-    left:10px;
+    top: 1vh;
+    left: 1vh;
     display: flex;
-    width: 150px;
-    max-height: 90px;
+    height: 10vh;
 }
 
 /* tab1 specific elements */
 #couple-image {
     width: 100vw;
-    height: 70vh;
-    top: 11vh;
+    height: 55vh;
+    top: 12.53vh;
     object-fit: cover;
     margin: 0;
     position: absolute;
     left: 0;
-    z-index: 0;
 }
 #personal-greeting {
     position: absolute;
-    top: 81vh;
+    top: 67vh;
+    min-width: 500px;
     left: 50%;
+    text-align: center;
     transform: translateX(-50%);
     color: #4CAF50;
-    z-index: 1;
 }
 #personal-introduction {
     position: absolute;
-    top: 90vh;
+    top: 76vh;
     left: 50%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
     text-align: center;
-    z-index: 1;
-    color: #333;
     width: 80%;
     max-width: 600px;
 }
 
 /* tab2 specific elements */
 #location-name {
+    text-align: center;
     color: #2196F3;
 }
 #location-image {
     display: flex;
-    justify-content: center; 
-    align-items: center;     
-    width: 100%;             
-    margin-bottom: 20px;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; 
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    min-width: 500px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
 }
-
 #location-facts {
     margin-top: 10px;
     text-align: center;
@@ -134,50 +135,128 @@ footer {
 
 /* tab3 specific elements */
 #accept-invite {
+    text-align: center;
     color: #2196F3;
-    margin-bottom: 50px;
+}
+#rsvp-by-date {
+    text-align: center;
+}
+#accept-invite-form {
+    justify-items: center;
+    background-color: #3333333f;
+    width: 89%;
+    max-width: 500px; 
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-right: 60px; 
+}
+.rsvp-header, .rsvp-row {
+    display: grid;
+    max-width: 500px;
 }
 .rsvp-header {
-    display: grid;
-    grid-template-columns: 0.5fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1.1fr 1fr;
+    column-gap: 1.5vw;
     font-weight: bold;
     margin-bottom: 10px;
     padding-bottom: 10px;
     text-align: left;
 }
-
 .rsvp-row {
-    display: grid;
-    grid-template-columns: 0.5fr 1fr 1fr 1fr;
-    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 0.9vw;
     margin-bottom: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
     align-items: center;
 }
-
+.header-name {
+    text-align: center;
+    transform: translateX(28px);
+}
+.header-rsvp {
+    text-align: center;
+    transform: translateX(2px);
+}
+.header-sleepover {
+    text-align: center;
+    transform: translateX(5px);
+}
+.header-allergy {
+    text-align: left;
+    transform: translateX(-2px);
+}
 .guest-name {
     font-weight: normal;
-    text-align: left;
+    text-align: center;
+    transform: translateX(20px);
 }
-
 .rsvp-allergy-btn {
-    padding: 8px 16px;
+    max-width: 25vh;
+    height: 4.5vh;
     background-color: #36cef4;
     color: rgb(0, 0, 0);
     border: none;
-    border-radius: 4px; 
-    font-size: 14px; 
-    cursor: pointer; 
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
 .rsvp-allergy-btn:hover {
-    background-color:  rgb(54, 177, 244);
+    background-color: rgb(54, 177, 244);
 }
-
 .rsvp-form-select {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     width: 100%;
-    max-width:190px;
+    max-width: 190px;
+}
+#rsvp-btn {
+    display: block;
+    margin: 0 auto;
+    margin-top: 5vh;
+    padding: 10px 20px;
+}
+/* tab4 specific elements */
+#contact {
+    text-align: center;
+    color: #de21f3;
+}
+#contactEmail, #contactPhone {
+    text-align: center;
+    font-weight: bold;
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    font-family: "Tangerine", sans-serif;
+    color: rgb(20, 20, 20);
+}
+
+/* footer specific elements */
+#countdown-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh; 
+    background-color: #2196F3;
+    padding: 1.5vh 0;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2em;
+    z-index: 10;
+}
+#countdown-header {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+#countdown-timer {
+    font-weight: bold;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+    padding: 5px 0;
 }

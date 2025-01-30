@@ -22,8 +22,9 @@
                 <img id="couple-image" src="../images/HusbandAndWife.png">
             </div>
             <div>
-                <h2 id="personal-greeting">Error</h2>
-                <p id="personal-introduction">Det verkar inte som att du har rätt inloggningsuppgifter <br>
+                <h2 id="personal-greeting" class="tab-header">Error</h2>
+                <p id="personal-introduction" class="paragraph">
+                    Det verkar inte som att du har rätt inloggningsuppgifter <br>
                     Använd din QR-kod för att få full åtkomst till sidan! <br>
                     Fungerar inte QR-koden? Kontakta oss via någon av e-mailadresserna i inbjudan!
                 </p>
@@ -31,18 +32,24 @@
         </div>
 
         <div id="tab2" class="tab-content">
-            <h2 id="location-name">Error</h2>
+            <h2 id="location-name" class="tab-header">Error</h2>
             <div id="image-container">
                 <img id="location-image" src="../images/locked.png"></img>
             </div>
-            <p id="location-facts">Det verkar inte som att du har rätt inloggningsuppgifter <br>
+            <p id="location-facts" class="paragraph">
+                Det verkar inte som att du har rätt inloggningsuppgifter <br>
                 Använd din QR-kod för att få full åtkomst till sidan! <br>
                 Fungerar inte QR-koden? Kontakta oss via någon av e-mailadresserna i inbjudan!
             </p>
         </div>
 
         <div id="tab3" class="tab-content">
-            <h2 id="accept-invite">Error</h2>
+            <h2 id="accept-invite" class="tab-header">Error</h2>
+            <p id="rsvp-by-date" class="paragraph">
+                Det verkar inte som att du har rätt inloggningsuppgifter <br>
+                Använd din QR-kod för att få full åtkomst till sidan! <br>
+                Fungerar inte QR-koden? Kontakta oss via någon av e-mailadresserna i inbjudan!
+            </p>
             <form id="accept-invite-form">
         
             </form>
@@ -50,17 +57,26 @@
         </div>
         
         <div id="tab4" class="tab-content">
-            <h2>Frågor eller funderingar?</h2>
-            <p id="contactEmail">Kan du inte se en e-mailaddress här? <br> 
+            <h2 id="contact" class="tab-header">Frågor eller funderingar?</h2>
+            <p id="contactEmail" class="paragraph">
+                Kan du inte se en e-mailaddress här? <br> 
                 Se till att du scannar din QR-kod för att öppna hemsidan!
             </p>
-            <p id="contactPhone">Funkar det fortfarande inte? <br> 
+            <p id="contactPhone" class="paragraph">
+                Funkar det fortfarande inte? <br> 
                 Kontakta e-mailaddressen du fick i din fysiska inbjudan!
             </p>
         </div>
     </main>
+
+    <footer id="countdown-footer">
+        <h2 id="countdown-header">Error</h2>
+        <span id="countdown-timer">
+
+        </span>
+    </footer>
     
-    <script defer src="../javascript/app.js"></script>
+    <script type="module" src="../javascript/App.js"></script>
     <link rel="stylesheet" href="../css/styles.css">
 </body>
 </html>
