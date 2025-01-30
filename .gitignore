@@ -1,7 +1,9 @@
 application.properties
 websecrets.json
 secrets.json
-src/main/resources/images/*
+src/main/resources/images/*.png
+src/main/resources/images/*.jpeg
+src/main/resources/images/*.jpg
 pom.xml
 .vscode/
 /target/
