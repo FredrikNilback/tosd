@@ -2,7 +2,7 @@
 ## About
 **THIS IS A WIP**
 
-My goal is to make a website that can onlt be accessed via a direct link in the form of a QR code.
+My goal is to make a website that can only be accessed via a direct link in the form of a QR code.
 This website will house information about me and my fiancée's upcomming wedding and allow guests to RSVP. 
 
 To protect our privacy, and our database, I have taken measures in order to only allow verified users with the proper ids and tokens to access anything that
