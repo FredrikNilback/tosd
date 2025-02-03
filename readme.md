@@ -12,7 +12,8 @@ You need application setting, secrets, and secret images in order to properly ru
 If you wish to set this site up locally yourself you will need to add your own database and your own settings, secrets and images. You will also need to set up the proper dependancies.
 
 ## How to run
-mvn spring-boot:run
+1. start SQL server.
+2. mvn spring-boot:run
 
 ## Technologies, Frameworks and Languages
 - Java (Backend)

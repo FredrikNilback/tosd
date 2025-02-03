@@ -69,9 +69,9 @@ public class SecretsController {
 
         try {
             List<String> imagePaths = List.of(
-                "src/main/resources/images/secretLocation1.png",
-                "src/main/resources/images/secretLocation2.png",
-                "src/main/resources/images/secretLogo.png"
+                "src/main/resources/images/mainImage.png",
+                "src/main/resources/images/secretLogo.png",
+                "src/main/resources/images/secretLocation1.png"
             );
             List<String> base64Images = new ArrayList<>();
             for (String imagePath : imagePaths) {

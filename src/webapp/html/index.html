@@ -9,7 +9,7 @@
     <header>
         <img id="logo-image" src="../images/locked.png">
         <nav>
-            <a id="tab1-btn">Välkommen!</a>
+            <a id="tab1-btn">Välkommen</a>
             <a id="tab2-btn">Information</a>
             <a id="tab3-btn">O.S.A</a>
             <a id="tab4-btn">Kontakt</a>
@@ -17,17 +17,30 @@
     </header>
     
     <main>
-        <div id="tab1" class="tab-content active">
-            <div id="image-container">
-                <img id="couple-image" src="../images/HusbandAndWife.png">
+        <div id="main-image-container">
+            <div id="main-image-wrapper">
+                <img id="main-image" src="../images/husbandAndWife.png">
             </div>
-            <div>
-                <h2 id="personal-greeting" class="tab-header">Error</h2>
+            <div id="main-overlay-text">
+                <h1 id="overlay-text-row1">ERROR</h1>
+                <h2 id="overlay-text-row2">ERROR</h2>
+            </div>
+        </div>
+        <div id="tab1" class="tab-content active">
+            <div id="tab1-text-container">
+                <h1 id="welcome-row1" class="welcome-class">Välkommen</h1>
+                <h2 id="welcome-row2" class="welcome-class">till vårt bröllop!</h2>
+                <h2 id="personal-greeting"  class="tab-header">Error</h2>
                 <p id="personal-introduction" class="paragraph">
                     Det verkar inte som att du har rätt inloggningsuppgifter <br>
                     Använd din QR-kod för att få full åtkomst till sidan! <br>
                     Fungerar inte QR-koden? Kontakta oss via någon av e-mailadresserna i inbjudan!
                 </p>
+            </div>
+            <div>
+                <button id="rsvp-tab-switch-btn">
+                    <img src="../images/rsvpButton.png"></img>
+                </button>
             </div>
         </div>
 
@@ -70,10 +83,10 @@
     </main>
 
     <footer id="countdown-footer">
-        <h2 id="countdown-header">Error</h2>
-        <span id="countdown-timer">
-
-        </span>
+        <div id="countdown-text">
+            <h2 id="countdown-header">Error</h2>
+            <span id="countdown-timer"></span>
+        </div>
     </footer>
     
     <script type="module" src="../javascript/App.js"></script>
