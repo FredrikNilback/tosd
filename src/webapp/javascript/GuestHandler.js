@@ -17,27 +17,26 @@ function getInnerHTML(guest, element, guestNames) {
     switch(element) {
         case "personal-greeting":
             if(guestNames.length === 1) {
-                return `Hej ${guest.names}!`
+                return `${guest.names}`
             }
             else {
                 let names = "";
-                for (let i = 0; i < guestNames.length - 1; i++) {
+                for (let i = 0; i < guestNames.length - 2; i++) {
                     names += guestNames[i] + ", ";
                 }
-                names += ("och " + guestNames[guestNames.length - 1]);
-                return `Hej ${names}!`
+                names += (guestNames[guestNames.length - 2]);
+                names += (" & " + guestNames[guestNames.length - 1]);
+                return `${names}`
             }
         case "personal-introduction":
             if(guestNames.length > 1) {
                 return `Vad kul att just ni är här! <br>` +
                 `Här kan ni se information gällande bröllopet, titta på lite fina bilder, ` + 
-                `se nedräkningen till vår speciella dag och viktigast av allt: <br>` +
-                `<a href="#" id="rsvp-link">O.S.A!</a>`
+                `se nedräkningen till vår speciella dag och viktigast av allt: <br>`
             } else {
                 return `Vad kul att just du är här! <br>` +
                 `Här kan du se information gällande bröllopet, titta på lite fina bilder, ` + 
-                `se nedräkningen till vår speciella dag och viktigast av allt: <br>` +
-                `<a href="#" id="rsvp-link">O.S.A!</a>`
+                `se nedräkningen till vår speciella dag och viktigast av allt: <br>`
             }
         case "accept-invite":
             if (guestNames.length === 1) {

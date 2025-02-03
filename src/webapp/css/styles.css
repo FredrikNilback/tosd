@@ -1,37 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
 @font-face {
-    font-family: 'MyCustomFont';
-    src: url('../fonts/bohemeFloral.ttf') format('truetype');
-    font-weight: normal;
+    font-family: 'oranienbaum';
+    src: url('../fonts/oranienbaum.ttf') format('truetype');
+    font-weight: 600;
     font-style: normal;
+}
+@font-face {
+    font-family: 'oranienbaumBold';
+    src: url('../fonts/oranienbaum.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'quentin';
+    src: url('../fonts/quentin.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@media (min-width: 1024px) {
+    #overlay-text-row2 {
+        transform: translateY(-5vh);
+        margin-top: 0vw;
+    }
 }
 
 html, body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    background-color: #f7f0e2;
+    height: 100%;
     overflow-x: hidden;
 }
-html {
-    height: 90%;
-}
 body {
-    max-height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 main {
     flex: 1;
-    padding-bottom: 20vh;
 }
 header {
+    width: 100%;
+    position: sticky;
+    top: 0;
     background-size: cover; 
-    background-position: 50px -50px;
-    background-color: antiquewhite;
-    color: white;
-    padding-bottom: 12.5vh;
+    background-position: center;
+    background-color: #f7f0e2;
+    color: #13322C;
     text-align: center;
-    position: relative;
+    padding-bottom: 11.5vh;
+    z-index: 100;
+    border-bottom: 1vh solid #13322C;
 }
-
 nav {
     position: absolute;
     top: 7vh;
@@ -39,9 +59,14 @@ nav {
     display: flex;
 }
 nav a {
-    padding: 1.5vh 1.5vw;
+    position: relative;
+    top: 1vh;
+    cursor: pointer;
+    padding-left: 0.9vw;
+    padding-right: 0.9vw;
+    padding-top: 1.5vh;
     text-decoration: none;
-    color: rgb(20, 20, 20);
+    color: #13322C;
     border-left: 3px solid transparent;
     border-right: 3px solid transparent;
     border-top: 2px solid transparent;
@@ -51,15 +76,14 @@ nav a {
     transition: color 0.3s ease;
 }
 nav a:hover {
-    color: #ffffff;
-    background-color: #5757574e;
+    top:0.5vh;
+    color: #da8b49;
 }
 nav a.active {
-    color: #ffffff;
-    font-weight: bold;
-    border-left: 3px solid rgb(20, 20, 20);
-    border-right: 3px solid rgb(20, 20, 20);
-    background-color: #5757578c;
+    top: 0;
+    padding-bottom: 1vh;
+    color: #da8b49;
+    background-color: #13322C; 
 }
 .tab-content {
     display: none;
@@ -68,10 +92,12 @@ nav a.active {
 .tab-content.active {
     display: block;
 }
-
 .tab-header {
-    font-family: 'MyCustomFont', sans-serif;
-    font-size: clamp(1.6rem, 3vw, 2rem);
+    font-family: 'oranienbaum', cursive;
+    font-size: clamp(1.6rem, 4vw, 3rem);
+}
+.paragraph {
+    font-family: 'oranienbaum', sans-serif;
 }
 
 /* header specific elements */
@@ -82,34 +108,112 @@ nav a.active {
     display: flex;
     height: 10vh;
 }
-
-/* tab1 specific elements */
-#couple-image {
+#main-image-container {
+    position: relative;
     width: 100vw;
-    height: 55vh;
-    top: 12.53vh;
+    height: 60vh;
+    overflow: hidden;
+}
+#main-image-wrapper {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+#main-image {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    margin: 0;
-    position: absolute;
-    left: 0;
+    object-position: center;
+    transition: transform 1.5s;
 }
-#personal-greeting {
+#main-overlay-text {
     position: absolute;
-    top: 67vh;
-    min-width: 500px;
-    left: 50%;
     text-align: center;
-    transform: translateX(-50%);
-    color: #4CAF50;
-}
-#personal-introduction {
-    position: absolute;
-    top: 76vh;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 2;
+    height: 50%;
+    width: 90%;
+    color:#da8b49;
+    text-shadow: 
+    2px 2px 3px rgba(0, 0, 0, 0.8), 
+    -2px -2px 3px rgba(0, 0, 0, 0.5);
+}
+#overlay-text-row1 {
+    font-family: 'quentin', sans-serif;
+    font-size: clamp(3.2rem, 5vw, 10rem);
+}
+#overlay-text-row2 {
+    margin-top: 8vh;
+    font-family: 'oranienbaum', sans-serif;
+    font-size: clamp(1.8rem, 6vw, 3rem);
+}
+
+/* tab1 specific elements */
+#tab1-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    width: 100%;
+    height: auto;
+    position: relative;
+    color: #13322C;
+}
+.welcome-class {
+    font-family: 'quentin', cursive;
+    min-width: 400px;
+    max-width: 80%;
+}
+#welcome-row1 {
+    font-size: clamp(4rem, 8vw, 5rem);
+    margin-top: 6vh;
+}
+#welcome-row2 {
+    font-size: clamp(1.3rem, 8vw, 3rem);
+    margin-top: 0vh;
+    transform: translateY(-8vh);
+}
+#personal-greeting {
+    min-width: 400px;
+    max-width: 80%;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-top: 0vh;
+    transform: translateY(-8vh);
+}
+#personal-introduction {
     width: 80%;
     max-width: 600px;
+    font-size: clamp(1.3rem, 2.5vw, 1.5rem);
+    margin-top: 0vh;
+    transform: translateY(-8vh);
+}
+#rsvp-tab-switch-btn {
+    position: relative;
+    background-color: #f7f0e2;
+    left: 50%;
+    transform: translate(-50%, -8vh);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 0;
+    display: inline-block;
+    width: 8vw;
+    min-width: 150px;
+    height: auto;
+}
+
+#rsvp-tab-switch-btn img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#rsvp-tab-switch-btn:hover img {
+    content: url('../images/rsvpButtonHover1.png');
 }
 
 /* tab2 specific elements */
@@ -234,29 +338,29 @@ nav a.active {
 
 /* footer specific elements */
 #countdown-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
     width: 100%;
-    height: 10vh; 
-    background-color: #2196F3;
-    padding: 1.5vh 0;
+    height: 6vh; 
+    background-color:  #13322C;;
     text-align: center;
-    border-top: 1px solid #ccc;
     font-weight: bold;
     font-size: 1.2em;
     z-index: 10;
+    padding-top: 3vh;
+    padding-bottom: 6vh;
+}
+#countdown-text {
+    color:#f7f0e2;
 }
 #countdown-header {
+    font-family: 'oranienbaumBold';
+    font-size: clamp(1rem, 5vw, 2.3rem);
     margin-top: 0px;
-    margin-bottom: 5px;
+    margin-bottom: 1vh;
 }
 #countdown-timer {
     font-weight: bold;
-    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-size: clamp(1.5rem, 2vw, 2.6rem);
     font-family: 'Arial', sans-serif;
-    color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     letter-spacing: 2px;
-    padding: 5px 0;
 }
