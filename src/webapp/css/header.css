@@ -1,0 +1,135 @@
+@media (min-width: 1024px) {
+    #overlay-text-row2 {
+        transform: translateY(-5vh);
+        margin-top: 0vw;
+    }
+}
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-size: cover; 
+    background-position: center;
+    background-color: #f7f0e2;
+    color: #13322C;
+    text-align: center;
+    padding-bottom: 11.5vh;
+    z-index: 100;
+    border-bottom: 1vh solid #13322C;
+}
+header::after {
+    content: "";
+    position: absolute;
+    bottom: 0vh;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #da8b49;
+}
+nav {
+    position: absolute;
+    top: 6.85vh;
+    right: 1vw;
+    display: flex;
+}
+nav a {
+    position: relative;
+    top: 0vh;
+    cursor: pointer;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+    padding-top: 1.5vh;
+    text-decoration: none;
+    color: #13322C;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    font-size: 1vw;
+    font-weight: bold;
+    text-align: center;
+    transition: color 0.3s ease;
+    z-index: 102;
+}
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1vh;
+    height: 1vh; 
+    background: transparent;
+}
+nav a:hover {
+    top:-0.5vh;
+    color: #da8b49;
+}
+nav a:hover::after {
+    pointer-events: auto;
+
+}
+nav a.active {
+    top: -0.51vh;
+    border-top: 3px #da8b49 solid;
+    border-left: 3px #da8b49 solid;
+    border-right: 3px #da8b49 solid;
+    padding-bottom: 1vh;
+    color: #da8b49;
+    background-color: #13322C; 
+}
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+.tab-content.active {
+    display: block;
+}
+#logo-image {
+    position: absolute;
+    top: 1vh;
+    left: 1vh;
+    display: flex;
+    height: 10vh;
+}
+#main-image-container {
+    position: relative;
+    width: 100vw;
+    height: 60vh;
+    overflow: hidden;
+}
+#main-image-wrapper {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+#main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 1.5s;
+}
+#main-overlay-text {
+    position: absolute;
+    text-align: center;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    height: 50%;
+    width: 90%;
+    color:#da8b49;
+    text-shadow: 
+    2px 2px 3px rgba(0, 0, 0, 0.8), 
+    -2px -2px 3px rgba(0, 0, 0, 0.5);
+}
+#overlay-text-row1 {
+    font-family: 'quentin', sans-serif;
+    font-size: clamp(3.2rem, 5vw, 10rem);
+}
+#overlay-text-row2 {
+    margin-top: 8vh;
+    font-family: 'oranienbaum', sans-serif;
+    font-size: clamp(1.8rem, 6vw, 3rem);
+}

@@ -69,7 +69,7 @@ function generateRSVPform(guest, guestNames) {
     headerRow.appendChild(sleepoverHeader);
 
     const allergyHeader = document.createElement("span");
-    allergyHeader.textContent = "Matpreferenser";
+    allergyHeader.textContent = "Matval";
     allergyHeader.classList.add("header-allergy");
     headerRow.appendChild(allergyHeader);
 
@@ -128,7 +128,7 @@ function generateRSVPform(guest, guestNames) {
 
         const allergyButton = document.createElement("button");
         allergyButton.name = `${allGuests[i]}-allergy-btn`;
-        allergyButton.textContent = "Hantera preferenser";
+        allergyButton.textContent = "Hantera matval";
         allergyButton.classList.add("rsvp-allergy-btn");
 
         div.appendChild(nameLabel);

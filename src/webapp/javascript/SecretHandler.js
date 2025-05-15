@@ -6,21 +6,26 @@ class SecretHandler {
 
     handleSecrets() {
         this.fetchImages(this.secrets);
-        document.getElementById("contactEmail").innerHTML = 
+        document.getElementById("contact-email").innerHTML = 
         `Kontakta oss via mail: <br>
-        <p style="font-family: 'Arial'; font-size: clamp(0.8rem, 1vw, 1rem);">${this.secrets.contactInformation.fredrikEmail}</p>
-        <p style="font-family: 'Arial'; font-size: clamp(0.8rem, 1vw, 1rem);;">${this.secrets.contactInformation.hannahEmail}</p>`;
-        document.getElementById("contactPhone").innerHTML = 
+        <span style="font-family: 'Arial'; font-size: clamp(0.8rem, 2vw, 2rem);">${this.secrets.contactInformation.hannahEmail}</span> <br>
+        <span style="font-family: 'Arial'; font-size: clamp(0.8rem, 2vw, 2rem);">${this.secrets.contactInformation.fredrikEmail}</span>`;
+        document.getElementById("contact-phone").innerHTML = 
         `Kontakta oss via telefon: <br>
-        Fredrik: <span style="font-family: 'Arial'; font-size: clamp(0.8rem, 1vw, 1rem);">${this.secrets.contactInformation.fredrikPhone}</span> <br>
-        Hannah: <span style="font-family: 'Arial'; font-size: clamp(0.8rem, 1vw, 1rem);">${this.secrets.contactInformation.hannahPhone}</span>`;
-        document.getElementById("location-name").innerHTML = `Vi ska gifta oss på <a href="#" id="location-link" target="_blank">${this.secrets.locationInformation.weddingLocation}</a>!`;
+        <span style="font-family: 'Arial'; font-size: clamp(0.8rem, 2vw, 2rem);">Hannah: ${this.secrets.contactInformation.hannahPhone}</span> <br>
+        <span style="font-family: 'Arial'; font-size: clamp(0.8rem, 2vw, 2rem);">Fredrik: ${this.secrets.contactInformation.fredrikPhone}</span>`;
+        document.getElementById("location-name").innerHTML = `<a href="#" id="location-link" target="_blank">${this.secrets.locationInformation.weddingLocation}</a>`;
         document.getElementById("location-link").href = this.secrets.locationInformation.hostWebURL;
-        document.getElementById("location-facts").innerHTML = `<a href="#" id="location-trivia-link" target="_blank">Här</a> kan du läsa mer om ${this.secrets.locationInformation.weddingLocation}s historia!`;
-        document.getElementById("location-trivia-link").href = this.secrets.locationInformation.locationTriviaURL;
         document.getElementById("rsvp-by-date").innerHTML = `Kom ihåg att senast O.S.A ${this.secrets.dates.rsvpByDate}`;
-        document.getElementById("overlay-text-row1").innerHTML = "Hannah & Fredrik";
+        document.getElementById("overlay-text-row1").textContent = "Hannah & Fredrik";
         document.getElementById("overlay-text-row2").textContent = `${this.secrets.dates.weddingDate.replace(/[-]/g, ".")}`;
+        document.getElementById("a1").innerHTML = this.secrets.faq.a1;
+        document.getElementById("a2").innerHTML = this.secrets.faq.a2;
+        document.getElementById("a3").innerHTML = this.secrets.faq.a3;
+        document.getElementById("a4").innerHTML = this.secrets.faq.a4;
+        document.getElementById("a5").innerHTML = this.secrets.faq.a5;
+        document.getElementById("a6").innerHTML = this.secrets.faq.a6;
+        document.getElementById("a7").innerHTML = this.secrets.faq.a7;
     
         this.generateCountdownTimer(this.secrets.dates.weddingDate);
     }

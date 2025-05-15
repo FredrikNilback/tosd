@@ -24,7 +24,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     });
     document.addEventListener("click", (e) => {
-        if (e.target && e.target.id === "rsvp-link") {
+        const button = e.target.closest("#rsvp-tab-switch-btn");
+        if (button) {
             e.preventDefault();
             switchTab("tab3");
         }
@@ -41,57 +42,67 @@ async function switchTab(tabId) {
 }
 
 function updateMainImage(tabId, lastTab) {
-
     const lastTabNumeral = parseInt(lastTab.match(/\d+/g)) - 1;
     const newTabNumeral = parseInt(tabId.match(/\d+/g)) - 1;
     if (newTabNumeral != lastTabNumeral) {
+        const isMobile = window.innerWidth < 1024;
         const mainImageWrapper = document.getElementById("main-image-wrapper");
-        const offset = -25 * newTabNumeral;
+        let offset;
+        if (isMobile) {
+            offset = -70 * newTabNumeral;
+        } else {
+            offset = -25 * newTabNumeral;
+        }
         mainImageWrapper.style.transform = `translateX(${offset}%)`;
     }
     let text;
-    switch (newTabNumeral) {
-        case 0:
-            text = document.getElementById("overlay-text-row1");
-            text.textContent = "Hannah & Fredrik";
-            document.getElementById("overlay-text-row2").textContent = `${secretHandler.secrets.dates.weddingDate.replace(/[-]/g, ".")}`;
-            break;
-        case 1:
-            text = document.getElementById("overlay-text-row1")
-            text.textContent = "Bröllopet";
-            document.getElementById("overlay-text-row2").textContent = "Vigseln | Festen | FAQ";
-            break;
-
-        //  maybe need different text based on number of guests, remove if-else in future if not.
-        case 2:
-            if (guestHandler.guest.names.split(",").map(name => name.trim()).length === 1) {
+    try {
+        switch (newTabNumeral) {
+            case 0:
                 text = document.getElementById("overlay-text-row1");
-                text.textContent = "Fira med oss!";
-            } else {
-                text = document.getElementById("overlay-text-row1");
-                text.textContent = "Fira med oss!";
-            }
-            document.getElementById("overlay-text-row2").textContent = `O.S.A senast ${secretHandler.secrets.dates.rsvpByDate.replace(/[-]/g, ".")}`;
-            break;
-        case 3:
-            if (guestHandler.guest.names.split(",").map(name => name.trim()).length === 1) {
-                text = document.getElementById("overlay-text-row1");
-                text.textContent = "";
-            } else {
-                text = document.getElementById("overlay-text-row1");
-                text.textContent = "";
-            }
-            document.getElementById("overlay-text-row2").textContent = "";
-            break;
+                text.innerHTML = `Hannah & <span class="f-fix">F</span>redrik`;
+                document.getElementById("overlay-text-row2").textContent = `${secretHandler.secrets.dates.weddingDate.replace(/[-]/g, ".")}`;
+                break;
+            case 1:
+                text = document.getElementById("overlay-text-row1")
+                text.textContent = "Bröllopet";
+                document.getElementById("overlay-text-row2").innerHTML = `
+                    <a href="#vigseln" class="overlay-link">Vigseln</a> | 
+                    <a href="#festen" class="overlay-link">Festen</a> | 
+                    <a href="#faq" class="overlay-link">FAQ</a>`;
+                break;
     
-        default:
-            break;
+            //  maybe need different text based on number of guests, remove if-else in future if not.
+            case 2:
+                if (guestHandler.guest.names.split(",").map(name => name.trim()).length === 1) {
+                    text = document.getElementById("overlay-text-row1");
+                    text.innerHTML = `<span class="f-fix">F</span>ira med oss!`;
+                } else {
+                    text = document.getElementById("overlay-text-row1");
+                    text.innerHTML = `<span class="f-fix">F</span>ira med oss!`;
+                }
+                document.getElementById("overlay-text-row2").textContent = `O.S.A senast ${secretHandler.secrets.dates.rsvpByDate.replace(/[-]/g, ".")}`;
+                break;
+            case 3:
+                if (guestHandler.guest.names.split(",").map(name => name.trim()).length === 1) {
+                    text = document.getElementById("overlay-text-row1");
+                    text.innerHTML = `<span class="f-fix">F</span>rågor eller funderingar?`;
+                } else {
+                    text = document.getElementById("overlay-text-row1");
+                    text.innerHTML = `<span class="f-fix">F</span>rågor eller funderingar?`;
+                }
+                document.getElementById("overlay-text-row2").textContent = "";
+                break;
+        
+            default:
+                break;
+            }
+    } catch (error) {
+        document.querySelectorAll(".tab-content").forEach(tab => tab.classList.remove("active"));
+        document.querySelectorAll("nav a").forEach(link => link.classList.remove("active"));
+        document.getElementById("tab4").classList.add("active");
+        document.getElementById(`${"tab4"}-btn`).classList.add("active");
     }
-}
-
-function getDynamicFontSize(min, preferred, max) {
-    const viewportWidth = window.innerWidth;
-    return Math.max(min, Math.min(viewportWidth * (preferred / 100), max)) + "rem";
 }
 
 async function fetchGuest() {

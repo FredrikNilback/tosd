@@ -1,0 +1,106 @@
+#accept-invite {
+    margin-top: 5vh;
+    text-align: center;
+    font-family: "oranienbaum";
+    font-size: 1.3vw;
+}
+#rsvp-by-date {
+    text-align: center;
+}
+#accept-invite-form {
+    justify-items: center;
+    font-family: "oranienbaum";
+    width: 89%;
+    max-width: 500px; 
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-right: 60px; 
+    margin-bottom: 10vh;
+}
+.rsvp-header, .rsvp-row {
+    display: grid;
+    max-width: 500px;
+}
+.rsvp-header {
+    grid-template-columns: 1fr 1fr 1.1fr 1fr;
+    column-gap: 1.5vw;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+}
+.rsvp-row {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 0.9vw;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    align-items: center;
+}
+.header-name {
+    text-align: center;
+    transform: translateX(28px);
+}
+.header-rsvp {
+    text-align: center;
+    transform: translateX(2px);
+}
+.header-sleepover {
+    text-align: center;
+    transform: translateX(5px);
+}
+.header-allergy {
+    text-align: left;
+    transform: translateX(-2px);
+}
+.guest-name {
+    font-weight: normal;
+    text-align: center;
+    transform: translateX(20px);
+}
+.rsvp-allergy-btn {
+    font-family: "oranienbaum";
+    max-width: 25vh;
+    height: 4.5vh;
+    background-color: gray;
+    color: #f7f0e2;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.rsvp-allergy-btn:hover {
+    background-color: gray;
+}
+.rsvp-form-select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 190px;
+}
+#submit-btn {
+    position: relative;
+    margin-top: 2vh;
+    background-color: #f7f0e2;
+    left: 50%;
+    transform: translate(-50%, -8vh);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 0;
+    display: inline-block;
+    width: 8vw;
+    min-width: 150px;
+    height: auto;
+}
+#submit-btn img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+#submit-btn:hover img {
+    content: url('../../images/submitButtonHover.png');
+}

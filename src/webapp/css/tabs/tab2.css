@@ -1,0 +1,114 @@
+.overlay-link, .overlay-link:hover {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+#vigseln, #festen, #faq{
+    text-align: center;
+    justify-content: center;
+    scroll-margin-top: 20vh;
+}
+.tab2-sub-header {
+    font-family: "oranienbaum";
+    font-size: clamp(3.1rem, 3vw, 6rem);
+    color: #da8b49;
+    background-color: #13322C;
+    border-radius: 50px;
+    width: 15vw;
+    min-width: 250px;
+    justify-self: center;
+}
+.tab2-image-div {
+    justify-self: center;
+    display: flex;
+    width: 35vw;       
+    align-items: center; 
+    justify-content: space-between;
+    gap: 1px;
+    margin-bottom: 10vh;
+}
+.tab2-image-text-div {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    max-width: 50%;
+    text-align: left;
+    font-family: "oranienbaum"; 
+}
+.tab2-picture-header-class {
+    font-size: clamp(2rem, 2.2vw, 6rem);
+    margin: 0px;
+}
+.tab2-picture-date-class {
+    font-size: clamp(2rem, 1.2vw, 4rem);
+    margin: 0px;
+}
+.tab2-picture-text-class {
+    text-align: left;
+    font-size: clamp(1rem, 0.9vw, 4rem);
+    margin-top: 20px;
+}
+.tab2-picture-class {
+    width: 15vw;
+}
+
+/*  Vigseln  */
+#vigseln-div1 {
+    transform: translateX(2vw);
+}
+#church-exterior-img {
+    margin-left: 2.5vw;
+}
+#vigseln-div2 {
+    transform: translateX(-2vw);
+    flex-direction: row-reverse;
+}
+#church-interior-img {
+    margin-right: 2.5vw;
+}
+
+/*  Festen  */
+#festen-div1 {
+    transform: translateX(2vw);
+}
+#location-image {
+    margin-left: 2.5vw;
+}
+#location-trivia-link {
+    display: inline-block;
+}
+#location-link {
+    color: inherit;
+}
+#festen-div2 {
+    transform: translateX(-2vw);
+    flex-direction: row-reverse;
+}
+#mingle-image {
+    margin-right: 2.5vw;
+}
+
+#festen-div3 {
+    transform: translateX(2vw);
+}
+#dinner-image {
+    margin-left: 2.5vw;
+}
+
+
+/*  FAQ  */
+.faq-question, .faq-answer {
+    font-family: "oranienbaum";
+    color:#13322C;
+}
+.faq-question {
+    font-size: clamp(2.5rem, 2.5vw, 5rem);
+    margin-bottom: 0px;
+}
+.faq-answer {
+    width: 45vw;
+    min-width: 700px;
+    justify-self: center;
+    font-size: clamp(1.5rem, 1vw, 3rem);
+    margin-bottom: 10vh;
+}
