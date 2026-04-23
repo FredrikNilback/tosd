@@ -1,0 +1,116 @@
+:root {
+    --background-color: #F6F7EC;
+    --text-color: #da8b49;
+    --trim-color: #da8b49;
+    /*--detail-color: #7399B4;*/
+    --complementary-color: #13322C;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-color);
+    cursor: default;
+    text-align: center;
+}
+
+body {
+    background-color: var(--background-color);
+    margin: 0;
+}
+
+header {
+    background-color: var(--background-color);
+    border-bottom: var(--trim-color) solid 4px;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+
+header,
+footer {
+    height: 8vh;
+    grid-column: 1 / -1;
+}
+
+#logo {
+    height: 6vh;
+    margin-top: 1vh;
+    margin-left: 2vw;
+    display: inline;
+}
+
+header nav {
+    display: inline-block;
+}
+
+header nav ul>* {
+    display: inline-block;
+    width: 8vw;
+    margin-right: 2vw;
+    text-align: center;
+    font-family: 'oranienbaumBold';
+    font-size: clamp(1px, 1.4rem, 9999px);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+header nav ul li a {
+    display: block;
+    padding: 2vh 0 0.78vh 0;
+    text-decoration: none;
+    color: var(--complementary-color);
+}
+
+.selected-tab {
+    border-right: var(--trim-color) solid 4px;
+    border-top: var(--trim-color) solid 4px;
+    border-left: var(--trim-color) solid 4px;
+    background-color: #d0cabe;
+}
+
+.hero {
+    height: 60vh;
+    grid-column: 1 / -1;
+    position: relative;
+    border-bottom: #d0cabe 6px solid;
+    font-size: clamp(1px, 8rem, 9999px);
+    font-family: 'photographSignature';
+    color: var(--text-color);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+.hero span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
+    grid-column: 2;
+}
+
+
+footer {
+    display: flex;
+    grid-column: 1 / -1;
+    background-color: var(--background-color);
+    border-top: var(--trim-color) solid 4px;
+    justify-content: right;
+}
+
+footer p {
+    margin-right: 1vw;
+    margin-top: auto;
+}

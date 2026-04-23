@@ -2,26 +2,20 @@
 ## About
 **THIS IS A WIP**
 
-My goal is to make a website that can only be accessed via a direct link in the form of a QR code.
+My goal is to make a website for my and my fiancée's wedding. 
 This website will house information about me and my fiancée's upcomming wedding and allow guests to RSVP. 
 
-To protect our privacy, I have taken measures in order to only allow verified users with the proper ids and tokens to access anything that
-I consider private, such as the date and location of the wedding, our contact information, and the ability to RSVP.
+This is an invite only website, as such the URL will not be revealed here, and only people with the correct access code can access the site when provided with the URL. 
+**Potential employers are more than welcome to request access to view the site.**
 
-You need application setting, secrets, and secret images in order to properly run this code. These are not available on github, but must be acquired from the owner (me).
-If you wish to set this site up locally yourself you will need to add your own database and your own settings, secrets and images. You will also need to set up the proper dependancies.
+This is a fully self hosted website, utilizing the traditional LAMP stack. 
 
-## How to run
-1. start SQL server.
-2. mvn spring-boot:run
 
 ## Technologies, Frameworks and Languages
-- Java (Backend)
-- Maven
-- Springboot
-- .json
-- MySQL (Database)
-- JavaScript (Frontend)
+- Kubuntu
+- Apache
+- MySQL
+- PHP
 - HTML
 - CSS
-- AWS
+- JavaScript

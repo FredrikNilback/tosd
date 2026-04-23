@@ -1,0 +1,41 @@
+.hero {
+    background-image: url('../images/hero/schedule-hero.webp');
+}
+
+#card-container {
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.paragraph-image,
+.image-paragraph {
+    display: flex;
+    background-color: #f7f0e2;
+    border-radius: 8px;
+    box-shadow: 6px 6px 4px 0 rgba(51, 51, 51, 0.5);
+    margin: 2vh 1vw;
+}
+
+.paragraph-image-text-div,
+.image-paragraph-text-div {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.paragraph-image img,
+.image-paragraph img {
+    height: 20vh;
+    width: 12vw;
+    border-radius: 8px;
+    object-fit: cover;
+
+}
+
+@media (orientation: portrait) {
+    .page-content {
+        grid-column: 1 / -1;
+        margin: 1vh 2vw;
+    }
+}

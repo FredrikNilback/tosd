@@ -1,9 +1,0 @@
-#tab4 {
-    text-align: center;
-}
-#contact-email, #contact-phone {
-    font-weight: bold;
-    font-size: clamp(1.6rem, 3vw, 3rem);
-    font-family: "oranienbaumBold", sans-serif;
-    color: rgb(20, 20, 20);
-}
