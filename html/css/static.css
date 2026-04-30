@@ -6,6 +6,10 @@
     --complementary-color: #13322C;
 }
 
+.hidden {
+    display: none;
+}
+
 h1,
 h2,
 h3,
@@ -15,6 +19,12 @@ h6 {
     color: var(--text-color);
     cursor: default;
     text-align: center;
+}
+
+p {
+    font-family: 'oranienbaum';
+    text-align: center;
+    cursor: default;
 }
 
 body {
@@ -92,6 +102,7 @@ header nav ul li a {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    cursor: default;
 }
 
 main {

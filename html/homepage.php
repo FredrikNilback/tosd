@@ -23,15 +23,35 @@
     $guest = $_SESSION['guests'][$guestCount - 1];
     $guestName = htmlspecialchars($guest['guest_name']);
     $guestsToGreet .= $guestName . "!";
+
+    $secrets = json_decode(file_get_contents('../secrets.json'));
 ?>
 
 <?php include 'includes/head.php' ?>
    <div class='page-content'>
         <div class="hero">
-            <span><?php if ($guestCount > 1) {echo 'Välkomna';} else {echo 'Välkommen';} ?> <br> <?= $guestsToGreet ?></span>
+            <span><?= $guestsToGreet ?></span>
         </div>
        <main>
-
+            <div id='introduction-div'>
+                <h1>Varmt <?php if ($guestCount > 1) {echo 'välkomna';} else {echo 'välkommen';} ?> till vår bröllopshemsida!</h1>
+                <p>Här kan <?php if ($guestCount > 1) {echo 'ni';} else {echo 'du';} ?> ta del av all information om bröllopet, hitta kontaktuppgifter till oss, se nedräkningen till den stora dagen och <strong>viktigast</strong> av allt <a href="rsvp.php"><i>O.S.A</i></a></p>
+            </div>
+            <div id='timeline-div'>
+                <h1>Vår tidslinje</h1>
+                <div class='timeline-left'>
+                    <h2>Tinder</h2>
+                    <h3><?= $secrets->matched ?></h3>
+                    <p>Som så många andra par idag, och speciellt under pandemin, så matchade även vi på tinder.</p>
+                    <img src="" alt="first message">
+                </div>
+                <div class='timeline-right'>
+                    <h2>Första träffen</h2>
+                    <h3><?= $secrets->first_met ?></h3>
+                    <p>Vi träffades för första gången i <?= $secrets->city ?>.<br>Utanför det hus vi senare kom att bygga nästan hela vårt förhållande i.</p>
+                    <img src="" alt="house">
+                </div>
+            </div>
        </main>
    </div>
 <?php include 'includes/footer.php' ?>
